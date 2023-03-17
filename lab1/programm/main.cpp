@@ -28,11 +28,11 @@ struct date {
 		bool set(int d, int m, int y) {
 			bool correctData = true;
 		
-			if (m < 0 || m > 12) {
+			if (m < 1 || m > 12) {
 				return !correctData;
 			}
 			
-			if (d < 0 || (m == 2 && d > 28) || ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30)) {
+			if (d < 1 || (m == 2 && d > 28) || ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30) || d > 31) {
 				return !correctData;
 			}
 			
@@ -77,7 +77,48 @@ struct time {
 		}
 		
 		bool set(int h, int m, int s) {
+			bool correctTime = true;
 			
+			if (h < 0 || h > 23) {
+				return !correctTime;
+			}
+			
+			if (m < 0 || m > 59) {
+				return !correctTime;
+			}
+			
+			if (s < 0 || s > 59) {
+				return !correctTime;
+			}
+			
+			hour = h;
+			minute = m;
+			second = s;
+			
+			return correctTime;
+		}
+		
+		void print() {
+			std::string hourCorrect = "", minuteCorrect = "", secondCorrect = "";
+			
+			if (hour < 10) {
+				hourCorrect = "0";
+			}
+			
+			if (minute < 10) {
+				minuteCorrect = "0";
+			}
+			
+			if (second < 10) {
+				secondCorrect = "0";
+			}
+			
+			std::cout << hourCorrect << hour << ":" << minuteCorrect << minute << ":" << secondCorrect << second << std::endl;
+		}
+		
+		time read() {
+			time t(hour, minute, second);
+			return t;
 		}
 		
 	private:
@@ -111,11 +152,37 @@ int main(int argc, char** argv) {
 			d.read();
 			d.print();
 		} else {
-			std::cout << "Incorrect date!";
+			std::cout << "Incorrect date!" << std::endl;
 		}
-				
 	}
 	
+	std::cout << "Do you want input time? Input y/n" << std::endl;
+	std::cin >> setTime;
+	
+	if (setTime == 'y') {
+		std::cout << "Input hour (from 0 to 23): ";
+		std::cin >> hour;
+		std::cout << "Input minute (from 0 to 59): ";
+		std::cin >> minute;
+		std::cout << "Input second (from 0 to 59): ";
+		std::cin >> second;
+		
+		time t(hour, minute, second);
+		bool correctTime = t.set(hour, minute, second);
+			
+		if (correctTime) {
+			t.read();
+			t.print();
+		} else {
+			std::cout << "Incorrect time!" << std::endl;
+		}
+	}
+		
+		
+		
+		
+		
+		
 	
 	
 	
