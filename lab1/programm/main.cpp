@@ -62,6 +62,26 @@ struct date {
 			return d;
 		}
 		
+		bool equal(date one, date two) {
+			return one.day == two.day && one.month == two.month && one.year == two.year;
+		}
+		
+		bool less(date one, date two) {
+			return one.year < two.year || one.year == two.year && one.month < two.month ||
+				   one.year == two.year && one.month == two.month && one.day < two.day;
+		}
+		
+		bool grater(date one, date two) {
+			return one.year > two.year || one.year == two.year && one.month > two.month ||
+				   one.year == two.year && one.month == two.month && one.day > two.day;
+		}
+		
+		void create() {
+			
+		}
+		
+		
+		
 	private:
 		int day;
 		int month;
@@ -119,6 +139,20 @@ struct time {
 		time read() {
 			time t(hour, minute, second);
 			return t;
+		}
+		
+		bool equal(time one, time two) {
+			return one.hour == two.hour && one.minute == two.minute && one.second == two.second;
+		}
+		
+		bool less(time one, time two) {
+			return one.hour < two.hour || one.hour == two.hour && one.minute < two.minute ||
+				   one.hour == two.hour && one.minute == two.minute && one.second < two.second;
+		}
+		
+		bool grater(time one, time two) {
+			return one.hour > two.hour || one.hour == two.hour && one.minute > two.minute ||
+				   one.hour == two.hour && one.minute == two.minute && one.second > two.second;
 		}
 		
 	private:
