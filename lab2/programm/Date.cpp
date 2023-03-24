@@ -63,19 +63,3 @@ bool Date::grater(Date one, Date two) {
     return one.year > two.year || one.year == two.year && one.month > two.month ||
         one.year == two.year && one.month == two.month && one.day > two.day;
 }
-
-bool Date::create() {
-    return true;
-}
-
-bool Date::resize() {
-    return true;
-}
-
-bool Date::remove() {
-    return true;
-}
-
-bool Date::apply() {
-    return true;
-}

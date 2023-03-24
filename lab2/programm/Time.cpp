@@ -70,19 +70,3 @@ bool Time::grater(Time one, Time two) {
     return one.hour > two.hour || one.hour == two.hour && one.minute > two.minute ||
         one.hour == two.hour && one.minute == two.minute && one.second > two.second;
 }
-
-bool Time::create() {
-    return true;
-}
-
-bool Time::resize() {
-    return true;
-}
-
-bool Time::remove() {
-    return true;
-}
-
-bool Time::apply() {
-    return true;
-}
