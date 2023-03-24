@@ -8,11 +8,11 @@ using namespace std;
 
 
 Date::Date () {
-	set(0, 0, 0);
+    set(0, 0, 0);
 }
 
 Date::Date(short d, short m, int y) {
-	set(d, m, y);
+    set(d, m, y);
 }
 
 Date::Date(const Date& date): day(date.day), month(date.month), year(date.year) { }
@@ -20,36 +20,36 @@ Date::Date(const Date& date): day(date.day), month(date.month), year(date.year) 
 Date::~Date() { }
 
 Date& Date::operator =(Date& date) {
-	day = date.getDay();
-	month = date.getMonth();
-	year = date.getYear();
+    day = date.getDay();
+    month = date.getMonth();
+    year = date.getYear();
 }
 
 bool Date::operator ==(Date& date) {
-	Date d = Date(day, month, year);
-	return equal(d, date);
+    Date d = Date(day, month, year);
+    return equal(d, date);
 }
 
 bool Date::operator >(Date& date) {
-	Date d = Date(day, month, year);
-	return grater(d, date);
+    Date d = Date(day, month, year);
+    return grater(d, date);
 }
 
 bool Date::operator <(Date& date) {
-	Date d = Date(day, month, year);
-	return less(d, date);
+    Date d = Date(day, month, year);
+    return less(d, date);
 }
 
 short Date::getDay() {
-	return day;
+    return day;
 }
 
 short Date::getMonth() {
-	return month;
+    return month;
 }
 
 int Date::getYear() {
-	return year;
+    return year;
 }
 
 ///////////////////////////////////////////////////

@@ -8,16 +8,16 @@ class Date {
         int year;
         
     public:
-    	Date();
-    	Date(short, short, int);
-    	Date(const Date&);
-    	~Date();
-    	
-    	Date& operator =(Date&);
-    	bool operator ==(Date&);
-    	bool operator >(Date&);
-    	bool operator <(Date&);
-    	
+        Date();
+        Date(short, short, int);
+        Date(const Date&);
+        ~Date();
+        
+        Date& operator =(Date&);
+        bool operator ==(Date&);
+        bool operator >(Date&);
+        bool operator <(Date&);
+        
         bool set(short, short, int);
         short getDay();
         short getMonth();

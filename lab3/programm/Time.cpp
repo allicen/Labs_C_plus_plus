@@ -6,6 +6,55 @@
 
 using namespace std;
 
+Time::Time() {
+    set(0, 0, 0);
+}
+
+Time::Time(short h, short m, int s) {
+    set(h, m, s);
+}
+
+Time::Time(const Time& t): hour(t.hour), minute(t.minute), second(t.second) { }
+
+Time::~Time() { }
+
+Time& Time::operator =(Time& t) {
+    hour = t.hour;
+    minute = t.minute;
+    second = t.second;
+}
+
+bool Time::operator ==(Time& t) {
+    Time now(hour, minute, second);
+    return equal(now, t);
+}
+
+bool Time::operator >(Time& t) {
+    Time now(hour, minute, second);
+    return equal(now, t);
+}
+
+bool Time::operator <(Time& t) {
+    Time now(hour, minute, second);
+    return equal(now, t);
+}
+
+short Time::getHour() {
+    return hour;
+}
+
+short Time::getMinute() {
+    return minute;
+}
+
+short Time::getSecond() {
+    return second;
+}
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
 bool Time::set(short h, short m, short s) {
     bool correctTime = true;
     
