@@ -19,6 +19,7 @@ c++ main.cpp -o main -O2 -Wall -Wextra -pedantic -s
 #include "Point.hpp"
 #include "Pixel.hpp"
 #include "Line.hpp"
+#include "Triangle.hpp"
 
 
 int main(int argc, char** argv) {
@@ -42,16 +43,22 @@ int main(int argc, char** argv) {
 	
 	Point a;
 	Point b;
+	Point c;
 	a.SetX(6);
 	a.SetY(8);
 	b.SetX(7);
 	b.SetY(10);
+	c.SetX(17);
+	c.SetY(10);
 	
 	Line line;
 	line.setPointA(a);
 	line.setPointB(b);
 	
-	
+	Triangle t;
+	t.setA(a);
+	t.setB(b);
+	t.setC(c);
 	
 	return 0;
 }
