@@ -6,6 +6,63 @@
 
 using namespace std;
 
+Line::Line() {
+    Point a;
+    Point b;
+    a.SetX(0);
+    a.SetY(0);
+    b.SetX(0);
+    b.SetY(0);
+    
+    a_ = a;
+    b_ = b;
+}
+
+Line::Line(Point a, Point b) {
+    a_ = a;
+    b_ = b;
+}
+
+Line::Line(Point a) {
+    Point b;
+    b.SetX(0);
+    b.SetY(0);
+    
+    a_ = a;
+    b_ = b;
+}
+
+Line::Line(const Line& line): a_(line.a_), b_(line.b_) {
+    
+}
+
+Line::~Line() {
+    
+}
+
+Line& Line::operator =(const Line& line) {
+    a_ = line.a_;
+    b_ = line.b_;
+    
+    return *this;
+}
+
+bool Line::operator ==(Line& line) {
+    return line.length() ==  length();
+}
+
+bool Line::operator >(Line& line) {
+    return  length() > line.length();
+}
+
+bool Line::operator <(Line& line) {
+    return  length() < line.length();
+}
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
 Point Line::getPointA() {
     return a_;
 }
@@ -63,4 +120,3 @@ Point Line::center() {
     
     return p;
 }
-

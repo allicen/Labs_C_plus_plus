@@ -9,6 +9,17 @@ class Line {
         Point b_;
         
     public:
+        Line();
+        Line(Point, Point);
+        Line(Point);
+        Line(const Line&);
+        ~Line();
+        
+        Line& operator =(const Line&);
+        bool operator ==(Line&);
+        bool operator >(Line&);
+        bool operator <(Line&);
+        
         Point getPointA();
         Point getPointB();
         void setPointA(Point);
