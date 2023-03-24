@@ -14,10 +14,6 @@ class Date {
         bool equal(Date, Date);
         bool less(Date, Date);
         bool grater(Date, Date);
-        bool create();
-        bool resize();
-        bool remove();
-        bool apply();
 };
 
 #endif
