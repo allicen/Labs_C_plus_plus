@@ -25,7 +25,7 @@ bool Date::set(short d, short m, int y) {
 }
 
 void Date::print(){
-    std::string dayCorrect = "", monthCorrect = "";
+    string dayCorrect = "", monthCorrect = "";
     
     if (day < 10) {
         dayCorrect = "0";
@@ -35,19 +35,19 @@ void Date::print(){
         monthCorrect = "0";
     }
     
-    std::cout << "Date: " << dayCorrect << day << "." << monthCorrect << month << "." << year << std::endl;
+    cout << "Date: " << dayCorrect << day << "." << monthCorrect << month << "." << year << endl;
 }
 
 void Date::read() {
     short d, m;
     int y;
-    std::cout << "Input date: " << std::endl;
-    std::cout << "Input day: ";
-    std::cin >> d;
-    std::cout << "Input month: ";
-    std::cin >> m;
-    std::cout << "Input year: ";
-    std::cin >> y;
+    cout << "Input date: " << endl;
+    cout << "Input day: ";
+    cin >> d;
+    cout << "Input month: ";
+    cin >> m;
+    cout << "Input year: ";
+    cin >> y;
 }
 
 bool Date::equal(Date one, Date two) {

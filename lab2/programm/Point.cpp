@@ -23,6 +23,10 @@ void Point::SetY(double y)
 	y_ = y;
 }
 
+double Point::GetY() {
+	return x_;	
+}
+
 //** 2.1 **
 
 void Point::Print()
