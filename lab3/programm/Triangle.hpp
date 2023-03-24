@@ -10,6 +10,16 @@ class Triangle {
         Point c_;
         
     public:
+        Triangle();
+        Triangle(Point, Point, Point);
+        Triangle(const Triangle&);
+        ~Triangle();
+        
+        Triangle& operator =(const Triangle&);
+        bool operator ==(Triangle&);
+        bool operator >(Triangle&);
+        bool operator <(Triangle&);
+        
         Point getA();
         Point getB();
         Point getC();

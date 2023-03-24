@@ -7,6 +7,56 @@
 
 using namespace std;
 
+Triangle::Triangle() {
+    Point a, b, c;
+    a.SetX(0);
+    a.SetY(0);
+    b.SetX(0);
+    b.SetY(0);
+    c.SetX(0);
+    c.SetY(0);
+    
+    a_ = a;
+    b_ = b;
+    c_ = c;
+}
+
+Triangle::Triangle(Point a, Point b, Point c) {
+    a_ = a;
+    b_ = b;
+    c_ = c;
+}
+
+Triangle::Triangle(const Triangle& t): a_(t.a_), b_(t.b_), c_(t.c_) {
+    
+}
+
+Triangle::~Triangle() {
+    
+}
+
+Triangle& Triangle::operator =(const Triangle& t) {
+    a_ = t.a_;
+    b_ = t.b_;
+    c_ = t.c_;
+}
+
+bool Triangle::operator ==(Triangle& t) {
+    return perimeter() == t.perimeter();
+}
+
+bool Triangle::operator >(Triangle& t) {
+    perimeter() > t.perimeter();
+}
+
+bool Triangle::operator <(Triangle& t) {
+    perimeter() < t.perimeter();
+}
+
+
+//////////////////////////////////////////
+//////////////////////////////////////////
+
 Point Triangle::getA() {
     return a_;
 }
