@@ -9,6 +9,16 @@ class Pixel {
         float r_, g_, b_, a_;
         
     public:
+    	Pixel();
+    	Pixel(Point);
+    	Pixel(Point, float, float, float);
+    	Pixel(Point, float, float, float, float);
+    	Pixel(const Pixel&);
+    	~Pixel();
+    	
+    	Pixel& operator =(const Pixel&);
+    	bool operator ==(Pixel&);
+    	
         Point getPoint();
         float getR();
         float getG();

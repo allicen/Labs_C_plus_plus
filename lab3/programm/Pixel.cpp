@@ -7,6 +7,73 @@
 
 using namespace std;
 
+
+Pixel::Pixel() {
+	Point p;
+	p.SetX(0);
+	p.SetY(0);
+	
+    setPoint(p);
+    setR(0);
+    setG(0);
+    setB(0);
+    setA(0);
+}
+
+Pixel::Pixel(Point p) {
+    setPoint(p);
+    setR(0);
+    setG(0);
+    setB(0);
+    setA(0);
+}
+
+Pixel::Pixel(Point p, float r, float g, float b) {
+	setPoint(p);
+    setR(r);
+    setG(g);
+    setB(b);
+    setA(0);
+}
+
+Pixel::Pixel(Point p, float r, float g, float b, float a) {
+	setPoint(p);
+    setR(r);
+    setG(g);
+    setB(b);
+    setA(a);
+}
+
+Pixel::Pixel(const Pixel& p) : point_(p.point_), r_(p.r_), g_(p.g_), b_(p.b_), a_(p.a_) {
+    cout << "Copy Pixel: ";
+    print();
+    cout << endl;
+}
+ 
+Pixel::~Pixel() {
+#ifdef PIXEL_TEST	
+    cout << "~Pixel(): "; print(); cout << endl; //для отладки
+#endif
+}
+
+Pixel& Pixel::operator =(const Pixel& p) {
+	point_ = p.point_;
+	r_ = p.r_;
+	g_ = p.g_;
+	b_ = p.b_;
+	a_ = p.a_;
+	
+	return *this;
+}
+
+bool Pixel::operator ==(Pixel& p) {
+	return point_.GetX() == p.point_.GetX() && point_.GetY() == p.point_.GetY()
+		   && r_ == p.r_ && g_ == p.g_ && b_ == p.b_ && a_ == p.a_;
+}
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
 Point Pixel::getPoint(){
     return point_;
 }
