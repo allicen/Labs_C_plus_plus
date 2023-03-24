@@ -18,6 +18,7 @@ c++ main.cpp -o main -O2 -Wall -Wextra -pedantic -s
 #include "Time.hpp"
 #include "Point.hpp"
 #include "Pixel.hpp"
+#include "Line.hpp"
 
 
 int main(int argc, char** argv) {
@@ -38,6 +39,17 @@ int main(int argc, char** argv) {
 	pixel.setG(0.55);
 	pixel.setB(0.0);
 	pixel.setA(0.5);
+	
+	Point a;
+	Point b;
+	a.SetX(6);
+	a.SetY(8);
+	b.SetX(7);
+	b.SetY(10);
+	
+	Line line;
+	line.setPointA(a);
+	line.setPointB(b);
 	
 	
 	
