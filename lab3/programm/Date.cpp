@@ -26,18 +26,15 @@ Date& Date::operator =(Date& date) {
 }
 
 bool Date::operator ==(Date& date) {
-    Date d = Date(day, month, year);
-    return equal(d, date);
+    return equal(date);
 }
 
 bool Date::operator >(Date& date) {
-    Date d = Date(day, month, year);
-    return grater(d, date);
+    return grater(date);
 }
 
 bool Date::operator <(Date& date) {
-    Date d = Date(day, month, year);
-    return less(d, date);
+    return less(date);
 }
 
 short Date::getDay() {
@@ -100,16 +97,16 @@ void Date::read() {
     cin >> y;
 }
 
-bool Date::equal(Date one, Date two) {
-    return one.day == two.day && one.month == two.month && one.year == two.year;;
+bool Date::equal(Date two) {
+    return day == two.day && month == two.month && year == two.year;;
 }
 
-bool Date::less(Date one, Date two) {
-    return one.year < two.year || one.year == two.year && one.month < two.month ||
-        one.year == two.year && one.month == two.month && one.day < two.day;
+bool Date::less(Date two) {
+    return year < two.year || year == two.year && month < two.month ||
+        year == two.year && month == two.month && day < two.day;
 }
 
-bool Date::grater(Date one, Date two) {
-    return one.year > two.year || one.year == two.year && one.month > two.month ||
-        one.year == two.year && one.month == two.month && one.day > two.day;
+bool Date::grater(Date two) {
+    return year > two.year || year == two.year && month > two.month ||
+        year == two.year && month == two.month && day > two.day;
 }
