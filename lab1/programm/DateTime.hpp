@@ -1,6 +1,8 @@
 #ifndef DATETIME_H
 #define DATETIME_H
 
+#include <iostream>
+
 
 struct date {
     public:
@@ -42,9 +44,16 @@ struct date {
             std::cout << "Date: " << dayCorrect << day << "." << monthCorrect << month << "." << year << std::endl;
         }
         
-        date read() {
-            date d(day, month, year);
-            return d;
+        bool read() {
+        	int d, m, y;
+        	std::cout << "Введите день: ";
+        	std::cin >> d;
+        	std::cout << "Введите месяц: ";
+        	std::cin >> m;
+        	std::cout << "Введите год: ";
+        	std::cin >> y;
+        	
+            return set(d, m, y);
         }
         
         bool equal(date one, date two) {
@@ -115,9 +124,16 @@ struct time {
             std::cout << hourCorrect << hour << ":" << minuteCorrect << minute << ":" << secondCorrect << second << std::endl;
         }
         
-        time read() {
-            time t(hour, minute, second);
-            return t;
+        bool read() {
+        	int h, m, s;
+        	std::cout << "Введите часы: ";
+        	std::cin >> h;
+        	std::cout << "Введите минуты: ";
+        	std::cin >> m;
+        	std::cout << "Введите секунды: ";
+        	std::cin >> s;
+        	
+            return set(h, m, s);
         }
         
         bool equal(time one, time two) {
