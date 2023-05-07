@@ -57,16 +57,16 @@ void Time::read() {
     std::cin >> s;
 }
 
-bool Time::equal(Time one, Time two) {
-    return one.hour == two.hour && one.minute == two.minute && one.second == two.second;
+bool Time::equal(Time two) {
+    return hour == two.hour && minute == two.minute && second == two.second;
 }
 
-bool Time::less(Time one, Time two) {
-    return one.hour < two.hour || one.hour == two.hour && one.minute < two.minute ||
-        one.hour == two.hour && one.minute == two.minute && one.second < two.second;
+bool Time::less(Time two) {
+    return hour < two.hour || hour == two.hour && minute < two.minute ||
+        hour == two.hour && minute == two.minute && second < two.second;
 }
 
-bool Time::grater(Time one, Time two) {
-    return one.hour > two.hour || one.hour == two.hour && one.minute > two.minute ||
-        one.hour == two.hour && one.minute == two.minute && one.second > two.second;
+bool Time::grater(Time two) {
+    return hour > two.hour || hour == two.hour && minute > two.minute ||
+        hour == two.hour && minute == two.minute && second > two.second;
 }

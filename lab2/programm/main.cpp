@@ -21,16 +21,6 @@ c++ main.cpp -o main -O2 -Wall -Wextra -pedantic -s
 #include "Line.hpp"
 #include "Triangle.hpp"
 
-float eps = 0.001;
-
-bool point_in_line (Point p, Line line) {
-    double a = line.getPointB().GetY() - line.getPointA().GetY();
-    double b = line.getPointA().GetY() - line.getPointA().GetY();
-    double c = - a * line.getPointA().GetX() - b * line.getPointA().GetY();
-    if (abs(a * p.GetX() + b * p.GetY() + c) > eps) return false;
-
-    return point_in_line (p, line);
-}
 
 int main(int argc, char** argv) {
     
@@ -70,7 +60,7 @@ int main(int argc, char** argv) {
     t.setB(b);
     t.setC(c);
     
-    bool check = point_in_line (a, line);
+    bool check = line.point_in_line (a);
     
     return 0;
 }
