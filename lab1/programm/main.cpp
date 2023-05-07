@@ -15,7 +15,7 @@ c++ main.cpp -o main -O2 -Wall -Wextra -pedantic -s
 
 #include <iostream>
 #include <typeinfo>
-#include "DateTime.hpp"
+#include "ArrayDinMem.hpp"
 
 int main(int argc, char** argv) {
 
@@ -67,6 +67,8 @@ int main(int argc, char** argv) {
             std::cout << "Incorrect time!" << std::endl;
         }
     }
+    
+    custom_type* t = create(10);    
 
     return 0;
 }
