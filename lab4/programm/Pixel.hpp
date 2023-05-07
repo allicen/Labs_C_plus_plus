@@ -17,15 +17,15 @@ class Pixel {
     	~Pixel();
     	
     	Pixel& operator =(const Pixel&);
-    	bool operator ==(Pixel&);
+    	bool operator ==(Pixel&) const;
     	
-        Point getPoint();
-        Color getColor();
+        Point getPoint() const;
+        Color getColor() const;
         
         void setPoint(Point);
         void setColor(Color);
         
-        void print();
+        void print() const;
         bool read();
         void move(double delta_x, double delta_y);
         double dist(Point&);

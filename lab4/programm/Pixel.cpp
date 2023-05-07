@@ -45,20 +45,20 @@ Pixel::~Pixel() {
 
 Pixel& Pixel::operator =(const Pixel& p) {
 	point_ = p.point_;
-	color_ = p.color_;
+//	color_ = p.color_;
 	
 	return *this;
 }
 
-bool Pixel::operator ==(Pixel& p) {
+bool Pixel::operator ==(Pixel& p) const {
 	return point_.GetX() == p.point_.GetX() && point_.GetY() == p.point_.GetY() && color_ == p.getColor();
 }
 
-Point Pixel::getPoint(){
+Point Pixel::getPoint() const {
     return point_;
 }
 
-Color Pixel::getColor(){
+Color Pixel::getColor() const {
     return color_;
 }
 
@@ -70,7 +70,7 @@ void Pixel::setPoint(Point point) {
 	point_ = point;
 }
 
-void Pixel::print() {
+void Pixel::print() const {
     cout << "point: (" << point_.GetX() << ", " << point_.GetY() << "), "
          << "color: (";
 	color_.print();

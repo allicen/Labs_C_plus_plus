@@ -73,10 +73,10 @@ Color& Color::operator =(const Color& c) {
 	return *this;
 }
 
-bool Color::operator ==(const Color& c) {
+bool Color::operator ==(const Color& c) const {
 	return r_ == c.getR() && g_ == c.getG() && b_ == c.getB() && a_ == c.getA();
 }
 
-void Color::print() {
+void Color::print() const {
 	cout << r_ << ", " << g_ << ", " << b_ << ", " << a_;
 }

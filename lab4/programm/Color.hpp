@@ -12,10 +12,10 @@ class Color {
 		Color(float, float, float, float);
 		~Color();
 		
-		void print();
+		void print() const;
 		
 		Color& operator =(const Color&);
-    	bool operator ==(const Color&);
+    	bool operator ==(const Color&) const;
 		
 		void setR(float);
 		void setG(float);

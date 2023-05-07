@@ -23,13 +23,13 @@ void Point::SetY(double y)
 	y_ = y;
 }
 
-double Point::GetY() {
+double Point::GetY() const {
 	return x_;	
 }
 
 //** 2.1 **
 
-void Point::Print()
+void Point::Print() const
 {
 	cout << '(' << x_ << ',' << y_ << ')';
 }
