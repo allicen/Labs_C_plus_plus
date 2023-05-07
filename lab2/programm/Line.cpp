@@ -64,3 +64,12 @@ Point Line::center() {
     return p;
 }
 
+bool Line::point_in_line (Point p) {
+	double a = getPointB().GetY() - getPointA().GetY();
+    double b = getPointA().GetY() - getPointA().GetY();
+    double c = - a * getPointA().GetX() - b * getPointA().GetY();
+    if (abs(a * p.GetX() + b * p.GetY() + c) > eps) return false;
+
+    return point_in_line (p);
+}
+
