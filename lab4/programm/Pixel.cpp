@@ -8,6 +8,8 @@
 
 using namespace std;
 
+size_t Pixel::count = 0;
+
 
 Pixel::Pixel() {
 	Point p;
@@ -17,6 +19,8 @@ Pixel::Pixel() {
     
     Color color;
     setColor(color);
+    
+    Pixel::count++;
 }
 
 Pixel::Pixel(Point p) {
@@ -24,11 +28,15 @@ Pixel::Pixel(Point p) {
     
     Color color;
     setColor(color);
+    
+    Pixel::count++;
 }
 
 Pixel::Pixel(Point p, Color color) {
 	setPoint(p);
     setColor(color);
+    
+    Pixel::count++;
 }
 
 Pixel::Pixel(const Pixel& p) : point_(p.point_), color_(p.color_) {
@@ -38,14 +46,12 @@ Pixel::Pixel(const Pixel& p) : point_(p.point_), color_(p.color_) {
 }
  
 Pixel::~Pixel() {
-#ifdef PIXEL_TEST	
-    cout << "~Pixel(): "; print(); cout << endl; //для отладки
-#endif
+	Pixel::count--;
 }
 
 Pixel& Pixel::operator =(const Pixel& p) {
 	point_ = p.point_;
-//	color_ = p.color_;
+	color_ = p.color_;
 	
 	return *this;
 }
@@ -120,3 +126,8 @@ double Pixel::dist(Point& b) const {
     
     return b.Dist(a);
 }
+
+
+//static size_t getCount() {
+//	return Pixel::count_;
+//}
