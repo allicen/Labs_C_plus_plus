@@ -25,9 +25,9 @@ class Time {
         bool set(short, short, short);
         void print();
         void read();
-        bool equal(Time, Time);
-        bool less(Time, Time);
-        bool grater(Time, Time);
+        bool equal(Time);
+        bool less(Time);
+        bool grater(Time);
 };
 
 #endif

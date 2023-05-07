@@ -24,9 +24,9 @@ class Date {
         int getYear();
         void print();
         void read();
-        bool equal(Date, Date);
-        bool less(Date, Date);
-        bool grater(Date, Date);
+        bool equal(Date);
+        bool less(Date);
+        bool grater(Date);
 };
 
 #endif
