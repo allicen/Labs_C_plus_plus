@@ -8,6 +8,7 @@ class Pixel {
     private:
         Point point_;
         Color color_;
+        static size_t count_;
         
     public:
     	Pixel();
@@ -28,7 +29,11 @@ class Pixel {
         void print() const;
         bool read();
         void move(double delta_x, double delta_y);
-        double dist(Point&);
+        double dist(Point&) const;
+        
+        static size_t getCount() {
+        	return count_;
+		};
 };
 
 #endif

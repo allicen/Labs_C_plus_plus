@@ -113,7 +113,7 @@ void Pixel::move(double delta_x, double delta_y) {
     p.Move(delta_x, delta_y);
 }
 
-double Pixel::dist(Point& b) {
+double Pixel::dist(Point& b) const {
     Point a;
     a.SetX(1);
     a.SetY(6);
