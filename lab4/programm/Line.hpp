@@ -16,18 +16,18 @@ class Line {
         ~Line();
         
         Line& operator =(const Line&);
-        bool operator ==(Line&);
-        bool operator >(Line&);
-        bool operator <(Line&);
+        bool operator ==(Line&) const;
+        bool operator >(Line&) const;
+        bool operator <(Line&) const;
         
-        Point getPointA();
-        Point getPointB();
+        Point getPointA() const;
+        Point getPointB() const;
         void setPointA(Point);
         void setPointB(Point);
-        void print();
+        void print() const;
         void read();
         void move(double ax, double ay, double bx, double by);
-        double length();
-        Point center();    
+        double length() const;
+        Point center() const;    
 };
 #endif

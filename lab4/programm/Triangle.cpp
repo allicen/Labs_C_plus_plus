@@ -41,15 +41,15 @@ Triangle& Triangle::operator =(const Triangle& t) {
     c_ = t.c_;
 }
 
-bool Triangle::operator ==(Triangle& t) {
+bool Triangle::operator ==(Triangle& t) const {
     return perimeter() == t.perimeter();
 }
 
-bool Triangle::operator >(Triangle& t) {
+bool Triangle::operator >(Triangle& t) const {
     perimeter() > t.perimeter();
 }
 
-bool Triangle::operator <(Triangle& t) {
+bool Triangle::operator <(Triangle& t) const {
     perimeter() < t.perimeter();
 }
 
@@ -57,15 +57,15 @@ bool Triangle::operator <(Triangle& t) {
 //////////////////////////////////////////
 //////////////////////////////////////////
 
-Point Triangle::getA() {
+Point Triangle::getA() const {
     return a_;
 }
 
-Point Triangle::getB() {
+Point Triangle::getB() const {
     return b_;
 }
 
-Point Triangle::getC() {
+Point Triangle::getC() const {
     return c_;
 }
 
@@ -81,7 +81,7 @@ void Triangle::setC(Point c) {
     c_ = c;
 }
 
-void Triangle::print() {
+void Triangle::print() const {
     a_.Print();
     b_.Print();
     c_.Print();
@@ -112,7 +112,7 @@ void Triangle::move(double ax, double ay, double bx, double by, double cx, doubl
     c_.Move(cx, cy);
 }
 
-double Triangle::perimeter() {
+double Triangle::perimeter() const {
     Line a, b, c;
     a.setPointA(a_);
     a.setPointB(b_);
@@ -124,7 +124,7 @@ double Triangle::perimeter() {
     return c.length() + b.length() + b.length();
 }
 
-Point Triangle::center() {
+Point Triangle::center() const {
     Point p;
     p.SetX((a_.GetX() + b_.GetX() + c_.GetX()) / 3);
     p.SetY((a_.GetY() + b_.GetY() + c_.GetY()) / 3);

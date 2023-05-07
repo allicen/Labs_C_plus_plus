@@ -16,21 +16,21 @@ class Triangle {
         ~Triangle();
         
         Triangle& operator =(const Triangle&);
-        bool operator ==(Triangle&);
-        bool operator >(Triangle&);
-        bool operator <(Triangle&);
+        bool operator ==(Triangle&) const;
+        bool operator >(Triangle&) const;
+        bool operator <(Triangle&) const;
         
-        Point getA();
-        Point getB();
-        Point getC();
+        Point getA() const;
+        Point getB() const;
+        Point getC() const;
         void setA(Point);
         void setB(Point);
         void setC(Point);
-        void print();
+        void print() const;
         bool read();
         void move(double, double, double, double, double, double);
-        double perimeter();
-        Point center();        
+        double perimeter() const;
+        Point center() const;        
 };
 
 #endif

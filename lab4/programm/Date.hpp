@@ -14,19 +14,19 @@ class Date {
         ~Date();
         
         Date& operator =(Date&);
-        bool operator ==(Date&);
-        bool operator >(Date&);
-        bool operator <(Date&);
+        bool operator ==(Date&) const;
+        bool operator >(Date&) const;
+        bool operator <(Date&) const;
         
         bool set(short, short, int);
-        short getDay();
-        short getMonth();
-        int getYear();
-        void print();
+        short getDay() const;
+        short getMonth() const;
+        int getYear() const;
+        void print() const;
         void read();
-        bool equal(Date);
-        bool less(Date);
-        bool grater(Date);
+        bool equal(Date) const;
+        bool less(Date) const;
+        bool grater(Date) const;
 };
 
 #endif

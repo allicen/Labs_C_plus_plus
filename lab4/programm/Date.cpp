@@ -25,27 +25,27 @@ Date& Date::operator =(Date& date) {
     year = date.getYear();
 }
 
-bool Date::operator ==(Date& date) {
+bool Date::operator ==(Date& date) const {
     return equal(date);
 }
 
-bool Date::operator >(Date& date) {
+bool Date::operator >(Date& date) const {
     return grater(date);
 }
 
-bool Date::operator <(Date& date) {
+bool Date::operator <(Date& date) const {
     return less(date);
 }
 
-short Date::getDay() {
+short Date::getDay() const {
     return day;
 }
 
-short Date::getMonth() {
+short Date::getMonth() const {
     return month;
 }
 
-int Date::getYear() {
+int Date::getYear() const {
     return year;
 }
 
@@ -71,7 +71,7 @@ bool Date::set(short d, short m, int y) {
     return correctData;
 }
 
-void Date::print(){
+void Date::print() const {
     string dayCorrect = "", monthCorrect = "";
     
     if (day < 10) {
@@ -97,16 +97,16 @@ void Date::read() {
     cin >> y;
 }
 
-bool Date::equal(Date two) {
+bool Date::equal(Date two) const {
     return day == two.day && month == two.month && year == two.year;;
 }
 
-bool Date::less(Date two) {
+bool Date::less(Date two) const {
     return year < two.year || year == two.year && month < two.month ||
         year == two.year && month == two.month && day < two.day;
 }
 
-bool Date::grater(Date two) {
+bool Date::grater(Date two) const {
     return year > two.year || year == two.year && month > two.month ||
         year == two.year && month == two.month && day > two.day;
 }

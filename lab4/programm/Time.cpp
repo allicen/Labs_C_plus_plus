@@ -18,33 +18,33 @@ Time::Time(const Time& t): hour(t.hour), minute(t.minute), second(t.second) { }
 
 Time::~Time() { }
 
-Time& Time::operator =(Time& t) {
+Time& Time::operator =(const Time& t) {
     hour = t.hour;
     minute = t.minute;
     second = t.second;
 }
 
-bool Time::operator ==(Time& t) {
+bool Time::operator ==(Time& t) const {
     return equal(t);
 }
 
-bool Time::operator >(Time& t) {
+bool Time::operator >(Time& t) const {
     return equal(t);
 }
 
-bool Time::operator <(Time& t) {
+bool Time::operator <(Time& t) const {
     return equal(t);
 }
 
-short Time::getHour() {
+short Time::getHour() const {
     return hour;
 }
 
-short Time::getMinute() {
+short Time::getMinute() const {
     return minute;
 }
 
-short Time::getSecond() {
+short Time::getSecond() const {
     return second;
 }
 
@@ -74,7 +74,7 @@ bool Time::set(short h, short m, short s) {
     return correctTime;
 }
 
-void Time::print(){
+void Time::print() const {
 std::string hourCorrect = "", minuteCorrect = "", secondCorrect = "";
             
     if (hour < 10) {
@@ -103,16 +103,16 @@ void Time::read() {
     std::cin >> s;
 }
 
-bool Time::equal(Time two) {
+bool Time::equal(Time two) const {
     return hour == two.hour && minute == two.minute && second == two.second;
 }
 
-bool Time::less(Time two) {
+bool Time::less(Time two) const {
     return hour < two.hour || hour == two.hour && minute < two.minute ||
         hour == two.hour && minute == two.minute && second < two.second;
 }
 
-bool Time::grater(Time two) {
+bool Time::grater(Time two) const {
     return hour > two.hour || hour == two.hour && minute > two.minute ||
         hour == two.hour && minute == two.minute && second > two.second;
 }

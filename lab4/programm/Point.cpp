@@ -67,7 +67,7 @@ void Point::Move(double dx, double dy)
 	this->SetY(this->y_ + dy); //другие методы своего класса
 }
 
-double Point::Dist(Point& other)
+double Point::Dist(Point& other) const
 {
 	return sqrt((x_ - other.x_) * (x_ - other.x_) 
 				+ (y_ - other.y_) * (y_ - other.y_));

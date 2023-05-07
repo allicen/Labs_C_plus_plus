@@ -12,7 +12,7 @@ class String
 		~String();
 		String& operator =(const String&);// = delete;
 		size_t Length() { return n_; }
-		void Print() { std::cout << s_; }
+		void Print() const { std::cout << s_; }
 		// ** 2 **
 		String(String&&);
 		String & operator =(String&&);

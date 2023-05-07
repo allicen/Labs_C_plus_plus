@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o Pixel.o Point.o Color.o
-LINKOBJ  = main.o Pixel.o Point.o Color.o
+OBJ      = main.o Pixel.o Point.o Color.o Date.o Line.o String_2.o Time.o Triangle.o
+LINKOBJ  = main.o Pixel.o Point.o Color.o Date.o Line.o String_2.o Time.o Triangle.o
 LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
 CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
@@ -35,3 +35,18 @@ Point.o: Point.cpp
 
 Color.o: Color.cpp
 	$(CPP) -c Color.cpp -o Color.o $(CXXFLAGS)
+
+Date.o: Date.cpp
+	$(CPP) -c Date.cpp -o Date.o $(CXXFLAGS)
+
+Line.o: Line.cpp
+	$(CPP) -c Line.cpp -o Line.o $(CXXFLAGS)
+
+String_2.o: String_2.cpp
+	$(CPP) -c String_2.cpp -o String_2.o $(CXXFLAGS)
+
+Time.o: Time.cpp
+	$(CPP) -c Time.cpp -o Time.o $(CXXFLAGS)
+
+Triangle.o: Triangle.cpp
+	$(CPP) -c Triangle.cpp -o Triangle.o $(CXXFLAGS)

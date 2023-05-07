@@ -47,15 +47,15 @@ Line& Line::operator =(const Line& line) {
     return *this;
 }
 
-bool Line::operator ==(Line& line) {
+bool Line::operator ==(Line& line) const {
     return line.length() ==  length();
 }
 
-bool Line::operator >(Line& line) {
+bool Line::operator >(Line& line) const {
     return  length() > line.length();
 }
 
-bool Line::operator <(Line& line) {
+bool Line::operator <(Line& line) const {
     return  length() < line.length();
 }
 
@@ -63,11 +63,11 @@ bool Line::operator <(Line& line) {
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 
-Point Line::getPointA() {
+Point Line::getPointA() const {
     return a_;
 }
 
-Point Line::getPointB() {
+Point Line::getPointB() const {
     return b_;
 }
 
@@ -79,7 +79,7 @@ void Line::setPointB(Point b) {
     b_ = b;
 }
 
-void Line::print() {
+void Line::print() const {
     cout << "Point A: ";
     a_.Print();
     cout << "Point B: ";
@@ -96,7 +96,7 @@ void Line::move(double ax, double ay, double bx, double by) {
     b_.Move(bx, by);
 }
 
-double Line::length() {
+double Line::length() const {
     double ax, ay, bx, by, res;
     ax = a_.GetX();
     ay = a_.GetX();
@@ -107,7 +107,7 @@ double Line::length() {
     return res;
 }
 
-Point Line::center() {
+Point Line::center() const {
     double ax, ay, bx, by, res;
     ax = a_.GetX();
     ay = a_.GetX();
