@@ -29,13 +29,26 @@ bool Date::operator ==(Date& date) const {
     return equal(date);
 }
 
+bool Date::operator !=(Date& date) const {
+    return !equal(date);
+}
+
 bool Date::operator >(Date& date) const {
     return grater(date);
+}
+
+bool Date::operator >=(Date& date) const {
+    return grater(date) || equal(date);
 }
 
 bool Date::operator <(Date& date) const {
     return less(date);
 }
+
+bool Date::operator <=(Date& date) const {
+    return less(date) || equal(date);
+}
+
 
 short Date::getDay() const {
     return day;
@@ -48,9 +61,6 @@ short Date::getMonth() const {
 int Date::getYear() const {
     return year;
 }
-
-///////////////////////////////////////////////////
-///////////////////////////////////////////////////
 
 
 bool Date::set(short d, short m, int y) {
@@ -82,7 +92,7 @@ void Date::print() const {
         monthCorrect = "0";
     }
     
-    cout << "Date: " << dayCorrect << day << "." << monthCorrect << month << "." << year << endl;
+    cout << dayCorrect << day << "." << monthCorrect << month << "." << year;
 }
 
 void Date::read() {

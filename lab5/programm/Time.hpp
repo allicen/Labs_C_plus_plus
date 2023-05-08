@@ -15,8 +15,11 @@ class Time {
         
         Time& operator =(const Time&);
         bool operator ==(Time&) const;
+        bool operator !=(Time&) const;
         bool operator >(Time&) const;
+        bool operator >=(Time&) const;
         bool operator <(Time&) const;
+        bool operator <=(Time&) const;
         
         short getHour() const;
         short getMinute() const;

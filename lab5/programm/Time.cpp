@@ -28,12 +28,24 @@ bool Time::operator ==(Time& t) const {
     return equal(t);
 }
 
+bool Time::operator !=(Time& t) const {
+    return !equal(t);
+}
+
 bool Time::operator >(Time& t) const {
-    return equal(t);
+    return grater(t);
+}
+
+bool Time::operator >=(Time& t) const {
+    return grater(t) || equal(t);
 }
 
 bool Time::operator <(Time& t) const {
-    return equal(t);
+    return less(t);
+}
+
+bool Time::operator <=(Time& t) const {
+    return less(t) || equal(t);
 }
 
 short Time::getHour() const {
@@ -47,10 +59,6 @@ short Time::getMinute() const {
 short Time::getSecond() const {
     return second;
 }
-
-
-//////////////////////////////////////////////
-//////////////////////////////////////////////
 
 bool Time::set(short h, short m, short s) {
     bool correctTime = true;
@@ -89,7 +97,7 @@ std::string hourCorrect = "", minuteCorrect = "", secondCorrect = "";
         secondCorrect = "0";
     }
     
-    std::cout << hourCorrect << hour << ":" << minuteCorrect << minute << ":" << secondCorrect << second << std::endl;
+    std::cout << hourCorrect << hour << ":" << minuteCorrect << minute << ":" << secondCorrect << second;
 }
 
 void Time::read() {

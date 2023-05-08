@@ -15,8 +15,11 @@ class Date {
         
         Date& operator =(Date&);
         bool operator ==(Date&) const;
+        bool operator !=(Date&) const;
         bool operator >(Date&) const;
+        bool operator >=(Date&) const;
         bool operator <(Date&) const;
+        bool operator <=(Date&) const;
         
         bool set(short, short, int);
         short getDay() const;

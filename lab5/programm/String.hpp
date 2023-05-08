@@ -1,4 +1,4 @@
-//Файл String_3.hpp – определение класса String
+//Файл String.hpp – определение класса String
 
 #ifndef STRING_H
 #define STRING_H

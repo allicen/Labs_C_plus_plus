@@ -2,7 +2,7 @@
 
 #include <cstring>
 
-#include "String_3.hpp"
+#include "String.hpp"
 
 //#define STRING_TEST
 
