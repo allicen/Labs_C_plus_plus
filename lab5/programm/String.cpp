@@ -131,3 +131,12 @@ char &String::operator [](size_t i)
 	dummy = '\0';
 	return dummy;
 }
+
+char &String::operator [](size_t i) const
+{
+	if(i <= n_) return s_[i];
+	cerr << "Индекс вне диапазона" << endl;
+	static char dummy;
+	dummy = '\0';
+	return dummy;
+}

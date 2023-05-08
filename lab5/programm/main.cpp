@@ -68,7 +68,16 @@ int main(int argc, char** argv) {
 		time_one.print();
 		cout << " меньше или равно времени ";
 		time_three.print();
+		cout << endl;
 	}
+	
+	
+	// Строка
+	String line("Пример строки");
+	cout << "Первый символ 1 строки: " << line[0] << endl;
+	
+	const String line2("Константная строка");
+	cout << "Первый символ константной строки: " << line2[0] << endl;
 	
 	
 	return 0;

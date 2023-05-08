@@ -23,6 +23,7 @@ class String
 		friend bool operator ==(const String &lhs, const String &rhs);
 		friend bool operator >(const String &lhs, const String &rhs);
 		char &operator [](size_t i);
+		char &operator [](size_t i) const;
 
 	private:
 		size_t n_; 	//длина строки (без учета завершающего ‘\0’)
