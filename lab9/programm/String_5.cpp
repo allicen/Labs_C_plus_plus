@@ -6,6 +6,7 @@
 #include <stdexcept>
 
 #include "String_5.hpp"
+#include "MyFileError.hpp"
 
 //#define STRING_TEST
 
@@ -132,8 +133,13 @@ ostream& operator <<(ostream &os, const String &rh)
 istream& operator >>(istream &is, String &rh)
 {
 	char buf[256];
-	is.getline(buf, sizeof(buf));//is.getline(buf, sizeof(buf), ' '); - не строка, а слово
-	rh = buf;
+	
+	if (!is.getline(buf, sizeof(buf))) {
+		throw MyFileError{ "Ошибка чтения потока" };
+	} else {
+		rh = buf;
+	}
+	
 	return is;
 }
 
