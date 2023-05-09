@@ -23,15 +23,6 @@ Line::Line(Point a, Point b) {
     b_ = b;
 }
 
-Line::Line(Point a) {
-    Point b;
-    b.SetX(0);
-    b.SetY(0);
-    
-    a_ = a;
-    b_ = b;
-}
-
 Line::Line(const Line& line): a_(line.a_), b_(line.b_) {
     
 }
@@ -60,44 +51,38 @@ bool Line::operator <(Line& line) const {
 }
 
 ostream& operator <<(ostream &os, const Line &line) {
-	line.print(os);
+	line.Print(os);
 	return os;
 }
 
 istream& operator >>(istream &is, Line &line) {
-	line.read(is);
+	line.Read(is);
 	return is;
 }
 
-Point Line::getPointA() const {
+const Point Line::getPointA() const {
     return a_;
 }
 
-Point Line::getPointB() const {
+const Point Line::getPointB() const {
     return b_;
 }
 
-void Line::setPointA(Point a) {
-    a_ = a;
-}
-
-void Line::setPointB(Point b) {
-    b_ = b;
-}
-
-void Line::print(std::ostream& os) const {
+void Line::Print(std::ostream& os) const {
     os << "Point A: ";
     a_.Print(os);
     os << "Point B: ";
     b_.Print(os);
 }
 
-void Line::read(std::istream& is) {
+bool Line::Read(std::istream& is, const char *txt) {
     a_.Read(is, "Введите точку A в виде (x,y) ");
     b_.Read(is, "Введите точку B в виде (x,y) ");
+    
+    return true;
 }
 
-void Line::move(double ax, double ay, double bx, double by) {
+void Line::Move(double ax, double ay, double bx, double by) {
     a_.Move(ax, ay);
     b_.Move(bx, by);
 }

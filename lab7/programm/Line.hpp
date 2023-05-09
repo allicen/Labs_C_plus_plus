@@ -1,9 +1,10 @@
 #ifndef LINE_H
 #define LINE_H
 
-#include "Point.hpp"
+#include "Point_2.hpp"
+#include "Shape.hpp"
 
-class Line {
+class Line : public Shape {
     private:
         Point a_;
         Point b_;
@@ -11,7 +12,6 @@ class Line {
     public:
         Line();
         Line(Point, Point);
-        Line(Point);
         Line(const Line&);
         ~Line();
         
@@ -20,13 +20,12 @@ class Line {
         bool operator >(Line&) const;
         bool operator <(Line&) const;
         
-        Point getPointA() const;
-        Point getPointB() const;
-        void setPointA(Point);
-        void setPointB(Point);
-        void print(std::ostream & = std::cout) const;
-        void read(std::istream & = std::cin);
-        void move(double ax, double ay, double bx, double by);
+        const Point getPointA() const;
+        const Point getPointB() const;
+        
+        void Print(std::ostream & = std::cout) const override;
+        bool Read(std::istream & = std::cin, const char *txt = nullptr) override;
+        void Move(double ax, double ay, double bx, double by) override;
         double length() const;
         Point center() const;    
 };
