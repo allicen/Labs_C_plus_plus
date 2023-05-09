@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Point_2.hpp"
 
-class Pixel : public Point
+class Pixel : private Point
 {
 	public:
 		enum Color : char {blue = 1, green, red = 4, white = 15};
