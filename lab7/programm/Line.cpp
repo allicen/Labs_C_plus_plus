@@ -18,7 +18,7 @@ Line::Line() {
     b_ = b;
 }
 
-Line::Line(Point a, Point b) {
+Line::Line(const Point& a, const Point& b) {
     a_ = a;
     b_ = b;
 }
@@ -66,6 +66,14 @@ const Point Line::getPointA() const {
 
 const Point Line::getPointB() const {
     return b_;
+}
+
+void Line::setPointA(Point a) {
+    a_ = a;
+}
+
+void Line::setPointB(Point b) {
+    b_ = b;
 }
 
 void Line::Print(std::ostream& os) const {

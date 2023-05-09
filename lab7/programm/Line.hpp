@@ -11,7 +11,7 @@ class Line : public Shape {
         
     public:
         Line();
-        Line(Point, Point);
+        Line(const Point& a, const Point& b);
         Line(const Line&);
         ~Line();
         
@@ -23,9 +23,12 @@ class Line : public Shape {
         const Point getPointA() const;
         const Point getPointB() const;
         
+        void setPointA(Point);
+        void setPointB(Point);
+        
         void Print(std::ostream & = std::cout) const override;
         bool Read(std::istream & = std::cin, const char *txt = nullptr) override;
-        void Move(double ax, double ay, double bx, double by) override;
+        void Move(double ax, double ay, double bx, double by);
         double length() const;
         Point center() const;    
 };
