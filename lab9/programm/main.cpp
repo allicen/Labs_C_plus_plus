@@ -97,6 +97,45 @@ void test(const Point *p) {
 }
 
 
+void test(const Point &r) {
+	cout << "\n------- Ссылки --------\n";
+	cout << "\n------- virtual --------\n";
+	
+	r.Print();
+	
+	cout << "\n------- typeid() -------\n";
+	
+	const type_info &ti = typeid(&r);
+	cout << ti.name() << endl;
+	
+	if( ti == typeid(Circle) )
+	{
+		const Circle &q = static_cast<const Circle &>(r);
+		q.Square();
+	}
+	
+	if( ti == typeid(Cylinder) )
+	{
+		const Cylinder &q = static_cast<const Cylinder &>(r);
+		q.Square();
+		q.Volume();
+	}
+	
+	cout <<"\n--- dynamic_cast<>() ---\n";
+	
+	try {
+		const Circle q = dynamic_cast<const Circle &>(r);
+		q.Square();
+		const Cylinder q2 = dynamic_cast<const Cylinder&>(r);
+		q2.Volume();
+	} catch (std::bad_cast& e) {
+		cout << e.what() << '\n';
+	} catch (...) {
+		throw std::bad_cast();
+	}
+}
+
+
 int main() {
 	// 9.1. 
 	String a;
@@ -161,6 +200,15 @@ int main() {
 	test(&b);
 	cout <<"\n------------------------\n";
 	test(&c);
+	cout <<"\n------------------------\n";
+	
+	
+	cout <<"------------------------\n";
+	test(a);
+	cout <<"\n------------------------\n";
+	test(b);
+	cout <<"\n------------------------\n";
+	test(c);
 	cout <<"\n------------------------\n";
 	
 	
