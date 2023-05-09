@@ -44,7 +44,7 @@ int main() {
 	
 	
 	
-	//Стек для int
+	// 9.2. 
 	Stack<int, 10> iStack;
 	
 	for(size_t i = 0; !iStack.IsFull(); ++i)
