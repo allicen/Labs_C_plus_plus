@@ -4,6 +4,7 @@
 #define STACK_H
 
 #include <iostream>
+#include <stdexcept>
 
 template<typename T, size_t size>
 class Stack
@@ -21,8 +22,16 @@ class Stack
 template<typename T, size_t size>
 void Stack<T, size>::Push(const T &x)
 {
-	if(IsFull()) std::cerr << "\nСтек полон\n";
-	else stk[top++] = x;
+	if(IsFull()) {
+		throw std::runtime_error("\nСтек полон\n");
+	}
+	else {
+		try {
+			stk[top++] = x;
+		} catch (...) {
+			throw std::runtime_error("\nНе удалось добавить элемент в стек.\n");
+		}
+	}
 }
 
 template<typename T, size_t size>
@@ -30,11 +39,16 @@ T Stack<T, size>::Pop()
 {
 	if(IsEmpty()) 
 	{
-		std::cerr << "\nСтек пуст\n";
-		return T();
+		throw std::runtime_error("\nСтек пуст\n");
 	}
-	else
-		return stk[--top];
+	else {
+		try {
+			return stk[--top];
+		} catch (...) {
+			throw std::runtime_error("\nНе удалось изъять элемент из стека.\n");
+		}
+	}
+		
 }
 
 #endif
