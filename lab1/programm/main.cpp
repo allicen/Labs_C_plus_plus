@@ -17,7 +17,36 @@ c++ main.cpp -o main -O2 -Wall -Wextra -pedantic -s
 #include <typeinfo>
 #include "ArrayDinMem.hpp"
 
+#include "LinkedList.hpp"
+#include "Node.hpp"
+
 int main(int argc, char** argv) {
+	
+	// Реализация двусвязного списка
+	LinkedList list;
+	list.pushBack(1.0);
+	list.pushBack(2.0);
+	list.pushBack(3.0);
+	list.pushBack(4.0);
+	
+	std::cout << "Добавлены элементы в список: ";
+	list.print();
+    std::cout << std::endl;
+    
+    list.popFront();
+	list.popBack();
+	
+	std::cout << "Список после удаления элементов сначала и с конца строки: ";
+	list.print();
+    std::cout << std::endl;
+    
+    list.pushFront(10.0);
+    
+    std::cout << "Список после добавления элементов в начало строки: ";
+	list.print();
+    std::cout << std::endl;
+    
+    std::cout << "Элемент на позиции 0 из списка: " << list[0]->data << std::endl;
 
     int day, month, year, hour, minute, second;
     
