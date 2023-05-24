@@ -9,46 +9,33 @@
 template<typename T, size_t size>
 class Stack
 {
-		T stk[size];
-		size_t top;
-	public:
-		Stack() : top(0) { }
-		void Push(const T &);
-		T Pop();
-		bool IsEmpty() { return !top; }
-		bool IsFull() { return top == size; }
+        T stk[size];
+        size_t top;
+    public:
+        Stack() : top(0) { }
+        void Push(const T &);
+        T Pop();
+        bool IsEmpty() { return !top; }
+        bool IsFull() { return top == size; }
 };
 
 template<typename T, size_t size>
 void Stack<T, size>::Push(const T &x)
 {
-	if(IsFull()) {
-		throw std::runtime_error("\nСтек полон\n");
-	}
-	else {
-		try {
-			stk[top++] = x;
-		} catch (...) {
-			throw std::runtime_error("\nНе удалось добавить элемент в стек.\n");
-		}
-	}
+    if(IsFull()) {
+        throw std::runtime_error("\nСтек полон\n");
+    } else {
+        stk[top++] = x;
+    }
 }
 
 template<typename T, size_t size>
 T Stack<T, size>::Pop()
 {
-	if(IsEmpty()) 
-	{
-		throw std::runtime_error("\nСтек пуст\n");
-	}
-	else {
-		try {
-			return stk[--top];
-		} catch (...) {
-			throw std::runtime_error("\nНе удалось изъять элемент из стека.\n");
-		}
-	}
-		
+    if(IsEmpty()) {
+        throw std::runtime_error("\nСтек пуст\n");
+    }
+    return stk[--top];
 }
 
 #endif
