@@ -2,6 +2,6 @@
 
 
 Node::Node(double data) {
-	this->data = data;
-	this->prev = this->next = NULL;
+    this->data = data;
+    this->prev = this->next = NULL;
 }
