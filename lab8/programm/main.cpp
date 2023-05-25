@@ -13,8 +13,32 @@ c++ main.cpp -o main -O2 -Wall -Wextra -pedantic -s
 
 #include <iostream>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+#include "ArrayDinMem.hpp"
+#include "Date.hpp"
+#include "Time.hpp"
+
 
 int main(int argc, char** argv) {
-	return 0;
+    size_t size = 5;
+    Date* date = create<Date>(size);
+    for (size_t i = 0; i < size; i++) {
+        date[i].set(i+3, i+10, i+2000);
+    }
+    
+    std::cout << "Результат добавления дат: " << std::endl;
+    apply(date, Date::print, std::cout);
+    
+    remove(date);
+    
+    Time* time = create<Time>(size);
+    for (size_t i = 0; i < size; i++) {
+        time[i].set(i+2, i+1, i+3);
+    }
+    
+    std::cout << "Результат добавления времени: " << std::endl;
+    apply(time, Time::print, std::cout);
+    
+    remove(time);
+    
+    return 0;
 }
